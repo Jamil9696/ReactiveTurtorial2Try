@@ -16,18 +16,8 @@
         <maven.compiler.target>17</maven.compiler.target>
     </properties>
 
+
     <dependencies>
-
-        <!--
-
-
-        -->
-        <dependency>
-            <groupId>io.projectreactor</groupId>
-            <artifactId>reactor-test</artifactId>
-            <scope>test</scope>
-        </dependency>
-
         <!--  Database -->
         <dependency>
             <groupId>org.flywaydb</groupId>
