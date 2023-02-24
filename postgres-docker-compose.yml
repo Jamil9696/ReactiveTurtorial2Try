@@ -1,0 +1,18 @@
+version: '3.9'
+
+
+services:
+
+  airportDB:
+    image: postgres:15-alpine
+    container_name: reativeDB
+    environment:
+      POSTGRES_PASSWORD: password2
+      POSTGRES_USER: jamil
+      POSTGRES_DB: reactiveDB
+    ports:
+      - '5436:5432'
+    volumes:
+      - reactiveDB:/home/reactive/volume
+volumes:
+  reactiveDB:

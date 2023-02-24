@@ -1,0 +1,19 @@
+server:
+  port: 9090
+
+spring:
+  application:
+    name: airport_reactive_project
+
+  r2dbc:
+    password: ${DATASOURCE_PW}
+    username: ${DATASOURCE_USER}
+    url: ${DATASOURCE_URL}
+  flyway:
+    default-schema: public
+    schemas: public
+    url: ${FLYWAY_URL}
+    user: ${DATASOURCE_USER}
+    password: ${DATASOURCE_PW}
+    locations: classpath:${FLYWAY_LOCATION:/db/migration,/db/data} # ,/db/data
+
