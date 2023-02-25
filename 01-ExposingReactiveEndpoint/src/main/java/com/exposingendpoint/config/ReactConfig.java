@@ -4,6 +4,7 @@ package com.exposingendpoint.config;
 import com.exposingendpoint.entities.Person;
 import com.exposingendpoint.handlers.PersonHandler;
 import com.exposingendpoint.service.PersonService;
+import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.r2dbc.repository.config.EnableR2dbcRepositories;
@@ -16,7 +17,10 @@ import static org.springframework.web.reactive.function.server.ServerResponse.ok
 
 @Configuration
 @EnableR2dbcRepositories
+@RequiredArgsConstructor
 public class ReactConfig {
+
+  private final PersonHandler personHandler;
 
 
   @Bean
@@ -27,11 +31,17 @@ public class ReactConfig {
                 .body(personService.testFlux(), Person.class))
         .build();
   }
+  @Bean
+  public RouterFunction<ServerResponse> router(){
+    return route().GET("/person-by-proxy", personHandler::getAllPerProxy).build();
+  }
 
   @Bean
-  public RouterFunction<ServerResponse> betterApproachToConfigRouter(PersonHandler personHandler) {
+  public RouterFunction<ServerResponse> betterApproachToConfigRouter() {
     return route()
         .GET("/person-by-better-route-approach", personHandler::getAll)
         .build();
   }
+
+
 }

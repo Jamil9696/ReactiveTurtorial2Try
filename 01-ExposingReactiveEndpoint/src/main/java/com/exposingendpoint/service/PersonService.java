@@ -2,6 +2,7 @@ package com.exposingendpoint.service;
 
 
 import com.exposingendpoint.entities.Person;
+import com.exposingendpoint.proxy.PersonProxy;
 import com.exposingendpoint.repository.PersonRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -15,6 +16,7 @@ import java.util.stream.Stream;
 public class PersonService {
 
   private final PersonRepository personRepository;
+  private final PersonProxy personProxy;
 
   public Flux<Person> getAllPersons(){
 
@@ -37,5 +39,11 @@ public class PersonService {
     return Flux.fromStream(Stream.of(p1,p2,p3)).delayElements(Duration.ofSeconds(2));
 
   }
+
+  public Flux<Person> getAllPerProxy(){
+    return personProxy.getAllPerProxy();
+  }
+
+
 
 }

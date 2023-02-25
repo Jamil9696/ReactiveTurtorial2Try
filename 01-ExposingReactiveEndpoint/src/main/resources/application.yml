@@ -1,10 +1,13 @@
 # DATASOURCE_PW=password2;DATASOURCE_URL=r2dbc:postgresql://localhost:5436/reactiveDB;DATASOURCE_USER=jamil;FLYWAY_URL=jdbc:postgresql://localhost:5436/reactiveDB
 server:
   port: 9090
-
+product:
+  service:
+    base:
+      url: ${BASE_URL:http://localhost:9090}
 spring:
   application:
-    name: airport_reactive_project
+    name: reactive_project
 
   r2dbc:
     password: ${DATASOURCE_PW}
