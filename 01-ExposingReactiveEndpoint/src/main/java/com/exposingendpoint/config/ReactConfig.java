@@ -42,10 +42,12 @@ public class ReactConfig {
   private final PersonHandler personHandler;
 
 
+  // We can cconfigure endpoints at the ccontroller level or in a own Configuration class like here
   @Bean
   public RouterFunction<ServerResponse> configRouter(PersonService personService){
     return route()
         .GET("/person-by-route", req ->
+            // bad practise
             ok().contentType(MediaType.TEXT_EVENT_STREAM)
                 .body(personService.testFlux(), Person.class))
         .build();
@@ -58,7 +60,7 @@ public class ReactConfig {
   @Bean
   public RouterFunction<ServerResponse> betterApproachToConfigRouter() {
     return route()
-        .GET("/person-by-better-route-approach", personHandler::getAll)
+        .GET("/person-by-better-route-approach", personHandler::getAll) // better approach by using handler
         .build();
   }
 
