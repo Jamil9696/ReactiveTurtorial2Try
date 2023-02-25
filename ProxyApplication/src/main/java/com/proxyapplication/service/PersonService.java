@@ -23,18 +23,20 @@ public class PersonService {
 
   public Flux<Person> testFlux(){
     var p1 = new Person();
-    p1.setName("P1");
+    p1.setName("T_P1");
     p1.setAge(20);
 
     var p2 = new Person();
-    p2.setName("P2");
+    p2.setName("T_P2");
     p2.setAge(21);
 
     var p3 = new Person();
-    p3.setName("P3");
+    p3.setName("T_P3");
     p3.setAge(24);
 
-    return Flux.fromStream(Stream.of(p1,p2,p3)).delayElements(Duration.ofSeconds(2));
+    var p4 = new Person();
+
+    return Flux.fromStream(Stream.of(p1, p4, p2,p3)).delayElements(Duration.ofSeconds(2));
 
   }
 

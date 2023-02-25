@@ -22,6 +22,13 @@ public class PersonController {
 
   }
 
+  @GetMapping(value = "/person-per-proxy", produces = MediaType.TEXT_EVENT_STREAM_VALUE)
+  public Flux<Person> getPersonViaProxy(){
+
+    return personService.getAllPerProxy();
+
+  }
+
 
 
 }

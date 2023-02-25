@@ -20,7 +20,7 @@ import static org.springframework.web.reactive.function.server.ServerResponse.ok
 public class ReactConfig {
 
     /*
-    http://localhost:9092/person-by-proxy          http://localhost:9093/person
+    http://localhost:9092/person-by-proxy          http://localhost:9093/get-test-data
 
     ----------Application 1 -------------          ---------------Application 2 -------------
     Routes -> Handler -> Service -> Proxy  ------> Routes -> Handler -> service -> repository
