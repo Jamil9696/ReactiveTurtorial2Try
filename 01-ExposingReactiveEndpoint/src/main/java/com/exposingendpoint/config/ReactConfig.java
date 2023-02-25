@@ -32,10 +32,10 @@ public class ReactConfig {
 
 
        http communication via proxys
-       http://localhost:9091/person-by-proxy           http://localhost:9093/person-by-proxy
+       http://localhost:9091/person-by-proxy                   http://localhost:9093/person-by-proxy
 
-       ----------Application 1 -------------          ---------------Application 2 -------------
-       Routes -> Handler -> Service -> Proxy  ------> Routes -> Handler -> service -> repository
+       ----------Application 1 -------------    will call      ---------------Application 2 (ProxyApplication) -------------
+       Routes -> Handler -> Service -> Proxy     ------>       Routes -> Handler -> service -> repository
 
    */
 
