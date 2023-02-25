@@ -1,0 +1,19 @@
+# DATASOURCE_PW=password2;DATASOURCE_URL=r2dbc:postgresql://localhost:5436/reactiveDB;DATASOURCE_USER=jamil;FLYWAY_URL=jdbc:postgresql://localhost:5436/reactiveDB
+server:
+  port: 9092
+spring:
+  application:
+    name: proxy_application
+
+  r2dbc:
+    password: ${DATASOURCE_PW}
+    username: ${DATASOURCE_USER}
+    url: ${DATASOURCE_URL}
+  flyway:
+    default-schema: public
+    schemas: public
+    url: ${FLYWAY_URL}
+    user: ${DATASOURCE_USER}
+    password: ${DATASOURCE_PW}
+    locations: classpath:${FLYWAY_LOCATION:/db/migration,/db/data} # ,/db/data
+
