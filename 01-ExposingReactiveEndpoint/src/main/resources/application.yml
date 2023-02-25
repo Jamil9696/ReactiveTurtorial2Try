@@ -1,4 +1,4 @@
-# DATASOURCE_PW=password2;DATASOURCE_URL=r2dbc:postgresql://localhost:5436/reactiveDB;DATASOURCE_USER=jamil;FLYWAY_URL=jdbc:postgresql://localhost:5436/reactiveDB
+# BASE_URL=http://localhost:9093;DATASOURCE_PW=password2;DATASOURCE_URL=r2dbc:postgresql://localhost:5436/reactiveDB;DATASOURCE_USER=jamil;FLYWAY_URL=jdbc:postgresql://localhost:5436/reactiveDB
 server:
   port: 9090
 product:

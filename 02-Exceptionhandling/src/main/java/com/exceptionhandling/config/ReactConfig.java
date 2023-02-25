@@ -19,6 +19,14 @@ import static org.springframework.web.reactive.function.server.ServerResponse.ok
 @RequiredArgsConstructor
 public class ReactConfig {
 
+    /*
+    http://localhost:9092/person-by-proxy          http://localhost:9093/person
+
+    ----------Application 1 -------------          ---------------Application 2 -------------
+    Routes -> Handler -> Service -> Proxy  ------> Routes -> Handler -> service -> repository
+
+   */
+
   private final PersonHandler personHandler;
 
   @Bean

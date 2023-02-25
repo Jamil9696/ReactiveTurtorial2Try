@@ -20,6 +20,25 @@ import static org.springframework.web.reactive.function.server.ServerResponse.ok
 @RequiredArgsConstructor
 public class ReactConfig {
 
+
+    /* One of the advantages of reactive applications is that they need less idle threads than non-reactive and are, therefore,
+       more efficient than non-reactive application in terms of resource management
+       applications ( idle threads will be created by the application and are managed by the JVM, the garbage collector for instance
+       is running in such a thread. ). The second purpose of a reactive application is that it's possible to have an easy
+       implementable event driven communication, which allows us to decouple the consumer from the producer of data.
+       It's possible to have reactive and non-reative application talking to each other but in most cases, you won't be able
+       to make the best out of it at least in terms of where it's possible to make events (here it's definitely better to have
+       reactive application in both places (producer and consumer side) rather than having one reactive an one non-reactive application
+
+
+       http communication via proxys
+       http://localhost:9091/person-by-proxy           http://localhost:9093/person-by-proxy
+
+       ----------Application 1 -------------          ---------------Application 2 -------------
+       Routes -> Handler -> Service -> Proxy  ------> Routes -> Handler -> service -> repository
+
+   */
+
   private final PersonHandler personHandler;
 
 
