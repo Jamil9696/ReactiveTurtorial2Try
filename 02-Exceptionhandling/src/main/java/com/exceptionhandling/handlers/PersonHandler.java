@@ -1,7 +1,8 @@
-package com.exposingendpoint.handlers;
+package com.exceptionhandling.handlers;
 
-import com.exposingendpoint.entities.Person;
-import com.exposingendpoint.service.PersonService;
+
+import com.exceptionhandling.entities.Person;
+import com.exceptionhandling.service.PersonService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Component;
