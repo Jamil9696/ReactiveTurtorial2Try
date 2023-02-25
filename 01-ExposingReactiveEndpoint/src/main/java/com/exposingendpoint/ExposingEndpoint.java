@@ -1,4 +1,4 @@
-package com.exposingrefactoring;
+package com.exposingendpoint;
 
 
 import org.springframework.boot.SpringApplication;

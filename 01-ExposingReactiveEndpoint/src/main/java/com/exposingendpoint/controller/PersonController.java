@@ -1,8 +1,8 @@
-package com.exposingrefactoring.controller;
+package com.exposingendpoint.controller;
 
 
-import com.exposingrefactoring.entities.Person;
-import com.exposingrefactoring.service.PersonService;
+import com.exposingendpoint.entities.Person;
+import com.exposingendpoint.service.PersonService;
 import lombok.AllArgsConstructor;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -22,5 +22,7 @@ public class PersonController {
     return personService.getAllPersons();
 
   }
+
+
 
 }

@@ -1,4 +1,4 @@
-package com.exposingrefactoring.entities;
+package com.exposingendpoint.entities;
 
 
 import lombok.Getter;

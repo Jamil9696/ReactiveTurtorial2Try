@@ -1,6 +1,6 @@
-package com.exposingrefactoring.repository;
+package com.exposingendpoint.repository;
 
-import com.exposingrefactoring.entities.Person;
+import com.exposingendpoint.entities.Person;
 import org.springframework.data.repository.reactive.ReactiveCrudRepository;
 import org.springframework.stereotype.Repository;
 
