@@ -41,8 +41,7 @@ public class ReactConfig {
 
   private final PersonHandler personHandler;
 
-
-  // We can cconfigure endpoints at the ccontroller level or in a own Configuration class like here
+  // We can configure endpoints at the ccontroller level or in a own Configuration class like here
   @Bean
   public RouterFunction<ServerResponse> configRouter(PersonService personService){
     return route()
@@ -52,6 +51,7 @@ public class ReactConfig {
                 .body(personService.testFlux(), Person.class))
         .build();
   }
+
   @Bean
   public RouterFunction<ServerResponse> router(){
     return route().GET("/person-by-proxy", personHandler::getAllPerProxy).build();
@@ -63,6 +63,4 @@ public class ReactConfig {
         .GET("/person-by-better-route-approach", personHandler::getAll) // better approach by using handler
         .build();
   }
-
-
 }
