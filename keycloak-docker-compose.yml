@@ -1,0 +1,30 @@
+version: '3.9'
+
+services:
+  postgres:
+    container_name: postgres_for_local_keycloak
+    image: postgres:15-alpine
+    restart: unless-stopped
+    env_file:
+      - postgres.env
+    networks:
+      - local-keycloak
+
+  keycloak:
+    depends_on:
+      - postgres
+    container_name: local_keycloak
+    env_file:
+      - keycloak.env
+    environment:
+      DB_VENDOR: postgres
+      DB_ADDR: postgres
+    image: jboss/keycloak:13.0.0
+    ports:
+      - "28080:8080"
+    restart: unless-stopped
+    networks:
+      - local-keycloak
+
+networks:
+  local-keycloak:

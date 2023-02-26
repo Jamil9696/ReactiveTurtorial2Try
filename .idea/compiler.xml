@@ -2,6 +2,7 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
       <profile name="Maven default annotation processors profile" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
@@ -11,6 +12,7 @@
         <module name="03-MonoFlux" />
         <module name="ProxyApplication" />
         <module name="01-ExposingReactiveEndpoint" />
+        <module name="05-SpringSecurityWithReactiveApp" />
       </profile>
     </annotationProcessing>
   </component>
@@ -20,6 +22,7 @@
       <module name="02-Exceptionhandling" options="-parameters" />
       <module name="03-MonoFlux" options="-parameters" />
       <module name="04-EssentialMethodsOfPublisher" options="-parameters" />
+      <module name="05-SpringSecurityWithReactiveApp" options="-parameters" />
       <module name="ProxyApplication" options="-parameters" />
     </option>
   </component>

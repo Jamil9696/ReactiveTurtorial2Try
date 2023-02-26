@@ -1,2 +1,4 @@
 # Project exclude paths
 /01-ExposingReactiveEndpoint/target/
+keycloak.env
+postgres.env
