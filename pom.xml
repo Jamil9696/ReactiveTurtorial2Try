@@ -21,6 +21,7 @@
         <module>02-Exceptionhandling</module>
         <module>ProxyApplication</module>
         <module>03-MonoFlux</module>
+        <module>04-EssentialMethodsOfPublisher</module>
     </modules>
 
     <properties>

@@ -6,6 +6,7 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="04-EssentialMethodsOfPublisher" />
         <module name="02-Exceptionhandling" />
         <module name="03-MonoFlux" />
         <module name="ProxyApplication" />
@@ -18,6 +19,7 @@
       <module name="01-ExposingReactiveEndpoint" options="-parameters" />
       <module name="02-Exceptionhandling" options="-parameters" />
       <module name="03-MonoFlux" options="-parameters" />
+      <module name="04-EssentialMethodsOfPublisher" options="-parameters" />
       <module name="ProxyApplication" options="-parameters" />
     </option>
   </component>

@@ -59,6 +59,7 @@ public class DemoController {
     customPublisher.subscribe(customSubscriber);
 
     // to define a flux dynamically through a sink, we can use the create-function
+    // we can use a sink to schedule events in unlimited Stream in a pipeline
     Flux<String> f4 = Flux.create(s -> {
       for (int i = 0; i < 10; i++){
         // do sth
