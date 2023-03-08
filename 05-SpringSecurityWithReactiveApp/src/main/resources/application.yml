@@ -5,10 +5,20 @@ product:
   service:
     base:
       url: ${BASE_URL}
+app:
+  security:
+    clientId: AirportReativeAuth
 
 spring:
   application:
     name: reactive_project_01
+
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          jwk-set-uri: http://localhost:28080/auth/realms/master/protocol/openid-connect/certs
+          issuer-uri: http://localhost:28080/auth/realms/master
 
   r2dbc:
     password: ${DATASOURCE_PW}
