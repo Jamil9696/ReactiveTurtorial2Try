@@ -1,0 +1,10 @@
+com\exceptionhandling\service\PersonService.class
+com\exceptionhandling\ExceptionHandler.class
+com\exceptionhandling\entities\Person.class
+com\exceptionhandling\handlers\PersonHandler.class
+com\exceptionhandling\config\ReactConfig.class
+com\exceptionhandling\exception\PersonRetrieveException.class
+com\exceptionhandling\controller\PersonController.class
+com\exceptionhandling\repository\PersonRepository.class
+com\exceptionhandling\config\WebClientConfig.class
+com\exceptionhandling\proxy\PersonProxy.class

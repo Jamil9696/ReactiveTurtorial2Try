@@ -1,0 +1,6 @@
+com\monoflux\entities\DemoSubscriber.class
+com\monoflux\config\ReactConfig.class
+com\monoflux\controller\DemoController.class
+com\monoflux\entities\DemoPublisher.class
+com\monoflux\entities\DemoSubscription.class
+com\monoflux\MonoFluxApplication.class

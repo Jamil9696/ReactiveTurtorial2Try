@@ -1,0 +1,6 @@
+com\proxyapplication\config\ReactConfig.class
+com\proxyapplication\controller\PersonController.class
+com\proxyapplication\repository\PersonRepository.class
+com\proxyapplication\entities\Person.class
+com\proxyapplication\service\PersonService.class
+com\proxyapplication\ProxyApplication.class
