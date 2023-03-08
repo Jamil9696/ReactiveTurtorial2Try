@@ -7,7 +7,8 @@ product:
       url: ${BASE_URL}
 app:
   security:
-    clientId: AirportReativeAuth
+    clientId: ${CLIENT_ID}
+
 
 spring:
   application:
@@ -17,8 +18,9 @@ spring:
     oauth2:
       resourceserver:
         jwt:
-          jwk-set-uri: http://localhost:28080/auth/realms/master/protocol/openid-connect/certs
-          issuer-uri: http://localhost:28080/auth/realms/master
+          jwk-set-uri: ${JWT_SET_URI}
+          issuer-uri: ${JWT_ISSUER_URI}
+          audiences: ${JWT_AUDIENCE}
 
   r2dbc:
     password: ${DATASOURCE_PW}

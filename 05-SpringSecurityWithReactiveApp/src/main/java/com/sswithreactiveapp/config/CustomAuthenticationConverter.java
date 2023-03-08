@@ -12,6 +12,7 @@ import reactor.core.publisher.Mono;
 
 import java.util.Collection;
 import java.util.Objects;
+import java.util.Optional;
 
 public class CustomAuthenticationConverter implements Converter<Jwt, Mono<AbstractAuthenticationToken>> {
 
@@ -35,6 +36,6 @@ public class CustomAuthenticationConverter implements Converter<Jwt, Mono<Abstra
   }
 
   protected String extractUsername(Jwt jwt) {
-    return jwt.containsClaim(USERNAME_CLAIM) ? jwt.getClaimAsString(USERNAME_CLAIM) : jwt.getSubject();
+    return Optional.ofNullable(jwt.getClaimAsString(USERNAME_CLAIM)).orElse(jwt.getSubject());
   }
 }

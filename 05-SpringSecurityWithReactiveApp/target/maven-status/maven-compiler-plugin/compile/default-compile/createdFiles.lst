@@ -2,7 +2,6 @@ com\sswithreactiveapp\entities\Person.class
 com\sswithreactiveapp\controller\PersonController.class
 com\sswithreactiveapp\repository\PersonRepository.class
 com\sswithreactiveapp\config\CustomAuthenticationConverter.class
-com\sswithreactiveapp\config\JwtConfig.class
 com\sswithreactiveapp\service\PersonService.class
 com\sswithreactiveapp\config\GrantedAuthoritiesExtractor.class
 com\sswithreactiveapp\config\SecurityConfig.class

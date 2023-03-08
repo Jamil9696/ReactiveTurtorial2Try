@@ -8,17 +8,17 @@ import org.springframework.security.authentication.AbstractAuthenticationToken;
 import org.springframework.security.config.annotation.method.configuration.EnableReactiveMethodSecurity;
 import org.springframework.security.config.annotation.web.reactive.EnableWebFluxSecurity;
 import org.springframework.security.config.web.server.ServerHttpSecurity;
+import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.oauth2.jwt.*;
 import org.springframework.security.web.server.SecurityWebFilterChain;
 import reactor.core.publisher.Mono;
+
+import java.util.Collection;
 
 @Configuration
 @EnableWebFluxSecurity
 @EnableReactiveMethodSecurity
 public class SecurityConfig {
-
-  @Value("${spring.security.oauth2.resourceserver.jwt.issuer-uri:}")
-  private String issuerUri;
 
   @Bean
   SecurityWebFilterChain springSecurityFilterChain(ServerHttpSecurity http, Converter<Jwt, Mono<AbstractAuthenticationToken>> jwtAuthenticationConverter) {
@@ -32,6 +32,16 @@ public class SecurityConfig {
     // @formatter:on
 
     return http.build();
+  }
+
+  @Bean
+  Converter<Jwt, Collection<GrantedAuthority>> customGrantedAuthoritiesConverter(@Value("${app.security.clientId}") String clientId) {
+    return new GrantedAuthoritiesExtractor(clientId);
+  }
+
+  @Bean
+  Converter<Jwt, Mono<AbstractAuthenticationToken>> customJwtAuthenticationConverter(Converter<Jwt, Collection<GrantedAuthority>> converter) {
+    return new CustomAuthenticationConverter(converter);
   }
 
 }
